@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Profile & Volunteer · Kindred Impact{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="eyebrow">YOUR COMMUNITY PROFILE</div><h1>Show up as you are.</h1><p>Every volunteer brings something different. Tell us what you’re interested in and we’ll help you find a way to contribute.</p></section>
+<div class="profile-layout">
+  <aside class="profile-panel"><div class="profile-avatar">✿</div><span class="tag">COMMUNITY MEMBER</span><h2>Your profile starts here</h2><p>This demo profile page is ready to personalise. Registration details are not saved to an account or database.</p><div class="list-line"><strong>Interests</strong><span>Choose in the form →</span></div><div class="list-line"><strong>Availability</strong><span>Flexible</span></div><div class="list-line"><strong>Experience</strong><span>All levels welcome</span></div></aside>
+  <section class="form-card"><h2>Volunteer registration</h2><p>Share a few details to register your interest. This demo shows a confirmation but does not store your information.</p>
+  <form method="post" action="{{ url_for('volunteer') }}">
+    <label for="name">Your name</label><input id="name" name="name" placeholder="e.g. Aanya Sharma" required>
+    <label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required>
+    <label for="interest">What would you like to help with?</label><select id="interest" name="interest" required><option value="">Choose an area</option><option>Education & training</option><option>Food support</option><option>Community events</option><option>Environment</option><option>Anything that helps</option></select>
+    <label for="availability">Availability</label><select id="availability" name="availability"><option>Weekends</option><option>Weekday mornings</option><option>Weekday afternoons</option><option>Flexible</option></select>
+    <label for="note">Anything else? (optional)</label><textarea id="note" name="note" rows="3" placeholder="Skills, questions, or ideas..."></textarea>
+    <button class="button primary submit" type="submit">Send my interest ↗</button>
+  </form></section>
+</div>
+{% endblock %}

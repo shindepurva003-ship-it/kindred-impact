@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Home · Kindred Impact{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="pulse"></span> COMMUNITY, IN ACTION</div>
+    <h1>A little kindness<br>goes <em>a long way.</em></h1>
+    <p class="hero-text">Bring your time, your skills, or simply your heart. Together, we can turn small acts into lasting change.</p>
+    <div class="hero-actions"><a class="button primary" href="{{ url_for('volunteer') }}">Become a volunteer <span>↗</span></a><a class="text-link" href="{{ url_for('programs') }}">Explore our programs →</a></div>
+    <div class="hero-proof"><div class="avatar-stack"><i>☺</i><i>✿</i><i>♡</i><i>+</i></div><div><strong>128 changemakers</strong><small>and counting this year</small></div></div>
+  </div>
+  <div class="hero-art">
+    <div class="sun-disc"></div><div class="art-note note-one">🌱 <span>Grow together</span></div>
+    <div class="art-note note-two">♡ <span>Give with heart</span></div>
+    <div class="art-center"><span class="art-flower">✿</span><div>GOOD THINGS<br>GROW HERE</div></div>
+    <div class="art-bottom">YOUR COMMUNITY · YOUR IMPACT</div>
+  </div>
+</section>
+<section class="stats-grid">
+  <div class="stat-card"><span class="stat-icon lilac">♧</span><small>Active volunteers</small><strong>{{ stats.volunteers }}</strong><span class="stat-foot">People showing up 💜</span></div>
+  <div class="stat-card"><span class="stat-icon peach">✳</span><small>Programs running</small><strong>{{ stats.programs }}</strong><span class="stat-foot">More ways to make change</span></div>
+  <div class="stat-card"><span class="stat-icon mint">↗</span><small>Community events</small><strong>{{ stats.events }}</strong><span class="stat-foot">Meet, help, connect</span></div>
+  <div class="stat-card"><span class="stat-icon yellow">♡</span><small>Meals supported</small><strong>{{ "{:,}".format(stats.meals_served) }}</strong><span class="stat-foot">Care served with dignity</span></div>
+</section>
+<section class="section dashboard-section">
+  <div class="section-heading"><div><div class="eyebrow">THE BIGGER PICTURE</div><h2>Impact, at a glance.</h2></div><span class="updated-pill">● Demo dashboard</span></div>
+  <div class="chart-grid">
+    <div class="chart-card"><div class="chart-head"><div><h3>Volunteer momentum</h3><p>Monthly volunteer sign-ups</p></div><span class="chart-symbol">↗</span></div><canvas id="volunteerChart"></canvas></div>
+    <div class="chart-card"><div class="chart-head"><div><h3>Where we make a difference</h3><p>Program participation share</p></div></div><div class="donut-wrap"><canvas id="programChart"></canvas><div class="donut-label"><strong>4</strong><span>focus areas</span></div></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-heading"><div><div class="eyebrow">FIND YOUR WAY IN</div><h2>Good work, many ways.</h2></div><a class="text-link" href="{{ url_for('programs') }}">All programs →</a></div>
+  <div class="feature-grid">
+    <a class="feature-card lavender" href="{{ url_for('programs') }}"><span class="feature-emoji">📚</span><span class="feature-tag">LEARN & SHARE</span><h3>Skills for tomorrow</h3><p>Help learners build confidence, skills, and brighter possibilities.</p><b>Explore training ↗</b></a>
+    <a class="feature-card butter" href="{{ url_for('food') }}"><span class="feature-emoji">🥣</span><span class="feature-tag">CARE & NOURISH</span><h3>Food with dignity</h3><p>Support community meals and make sure no one feels forgotten.</p><b>See food support ↗</b></a>
+    <a class="feature-card mint-card" href="{{ url_for('events') }}"><span class="feature-emoji">🌿</span><span class="feature-tag">MEET & DO</span><h3>Show up together</h3><p>Join friendly local events where every helping hand matters.</p><b>Find an event ↗</b></a>
+  </div>
+</section>
+<section class="closing-cta"><div><div class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div><h2>Have an hour? You have an impact.</h2><p>Bring what you can. We’ll find a way to make it count.</p></div><a class="button dark" href="{{ url_for('volunteer') }}">Join the community ↗</a></section>
+<script>
+const chartFont = {family: "Inter, system-ui, sans-serif"};
+new Chart(document.getElementById("volunteerChart"), {
+ type:"line", data:{labels:{{ months|tojson }},datasets:[{label:"New volunteers",data:{{ volunteer_data|tojson }},borderColor:"#7356d8",backgroundColor:"rgba(115,86,216,.12)",fill:true,tension:.38,pointRadius:4,pointBackgroundColor:"#7356d8",borderWidth:3}]},
+ options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:"#eeeaf4"},ticks:{stepSize:10}},x:{grid:{display:false}}}}
+});
+new Chart(document.getElementById("programChart"), {
+ type:"doughnut",data:{labels:{{ program_labels|tojson }},datasets:[{data:{{ program_data|tojson }},backgroundColor:["#7356d8","#f2a56f","#80c7ae","#f0cc65"],borderWidth:0,hoverOffset:6}]},
+ options:{cutout:"72%",plugins:{legend:{position:"bottom",labels:{usePointStyle:true,boxWidth:7,padding:16,font:{size:11}}}}}
+});
+</script>
+{% endblock %}

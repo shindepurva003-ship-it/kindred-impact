@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Events that bring us together · Kindred Impact{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="eyebrow">KINDRED IMPACT · COMMUNITY</div><h1>Events that bring us together</h1><p>Good people, good energy, and practical ways to help. Pick an event and come as you are.</p></section>
+<section class="content-grid">
+<article class="content-card"><span class="emoji">🌿</span><h3>Community clean-up</h3><p>Help care for a shared public space. Bring comfortable shoes and a can-do attitude.</p><span class="tag">COMING SOON</span></article>
+<article class="content-card"><span class="emoji">📚</span><h3>Learning circle</h3><p>Support a friendly peer-learning session for students and first-time learners.</p><span class="tag">WEEKEND</span></article>
+<article class="content-card"><span class="emoji">🥫</span><h3>Community pantry day</h3><p>Sort essentials, prepare food-support packs, and help the distribution team.</p><span class="tag">VOLUNTEER</span></article>
+</section>
+<section class="closing-cta"><div><div class="eyebrow">MAKE IT MEAN SOMETHING</div><h2>There's a place for you here.</h2><p>Join in with your time, your ideas, or your willingness to learn.</p></div><a class="button dark" href="{{ url_for('volunteer') }}">Volunteer ↗</a></section>
+{% endblock %}

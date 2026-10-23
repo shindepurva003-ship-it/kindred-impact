@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}A kinder community starts with us · Kindred Impact{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="eyebrow">KINDRED IMPACT · COMMUNITY</div><h1>A kinder community starts with us</h1><p>Kindred Impact is a demo concept for a community initiative: a welcoming place to discover programs, join events, volunteer, and track collective progress.</p></section>
+<section class="content-grid">
+<article class="content-card"><span class="emoji">💜</span><h3>People first</h3><p>We believe everyone deserves to feel seen, respected, and included.</p><span class="tag">VALUES</span></article>
+<article class="content-card"><span class="emoji">🌼</span><h3>Small steps count</h3><p>Consistent, practical acts can build meaningful change over time.</p><span class="tag">PURPOSE</span></article>
+<article class="content-card"><span class="emoji">🔎</span><h3>Open and accountable</h3><p>We aim to make activities and progress easy for the community to understand.</p><span class="tag">TRANSPARENCY</span></article>
+</section>
+<section class="closing-cta"><div><div class="eyebrow">MAKE IT MEAN SOMETHING</div><h2>There's a place for you here.</h2><p>Join in with your time, your ideas, or your willingness to learn.</p></div><a class="button dark" href="{{ url_for('volunteer') }}">Volunteer ↗</a></section>
+{% endblock %}

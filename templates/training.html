@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Skills grow when we share them · Kindred Impact{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="eyebrow">KINDRED IMPACT · COMMUNITY</div><h1>Skills grow when we share them</h1><p>Explore learning and training programs designed to help people build confidence, practical skills, and community connections.</p></section>
+<section class="content-grid">
+<article class="content-card"><span class="emoji">💻</span><h3>Digital basics</h3><p>Help learners practise computer basics, online safety, and everyday digital tools.</p><span class="tag">BEGINNER</span></article>
+<article class="content-card"><span class="emoji">🗣️</span><h3>Communication & confidence</h3><p>Friendly sessions for speaking, collaboration, and interview preparation.</p><span class="tag">ALL LEVELS</span></article>
+<article class="content-card"><span class="emoji">🌱</span><h3>Volunteer orientation</h3><p>Learn how to contribute respectfully, work as a team, and support community activities.</p><span class="tag">START HERE</span></article>
+</section>
+<section class="closing-cta"><div><div class="eyebrow">MAKE IT MEAN SOMETHING</div><h2>There's a place for you here.</h2><p>Join in with your time, your ideas, or your willingness to learn.</p></div><a class="button dark" href="{{ url_for('volunteer') }}">Volunteer ↗</a></section>
+{% endblock %}

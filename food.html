@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Nourishment is a community effort · Kindred Impact{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="eyebrow">KINDRED IMPACT · COMMUNITY</div><h1>Nourishment is a community effort</h1><p>Our food-support concept focuses on access, dignity, and making sure useful resources reach people who need them.</p></section>
+<section class="content-grid">
+<article class="content-card"><span class="emoji">🥣</span><h3>Community meals</h3><p>Coordinate meal distribution with local community groups and trusted partners.</p><span class="tag">CARE</span></article>
+<article class="content-card"><span class="emoji">🧺</span><h3>Pantry essentials</h3><p>Help sort and organise staple food items and hygiene essentials.</p><span class="tag">SUPPORT</span></article>
+<article class="content-card"><span class="emoji">🤝</span><h3>Partner with us</h3><p>Bring a local group, kitchen, or community organisation into the conversation.</p><span class="tag">CONNECT</span></article>
+</section>
+<section class="closing-cta"><div><div class="eyebrow">MAKE IT MEAN SOMETHING</div><h2>There's a place for you here.</h2><p>Join in with your time, your ideas, or your willingness to learn.</p></div><a class="button dark" href="{{ url_for('volunteer') }}">Volunteer ↗</a></section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Feedback · Kindred Impact{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="eyebrow">HELP US GROW</div><h1>Your voice matters.</h1><p>Tell us what feels useful, what could be better, or what you’d love to see next. Thoughtful feedback helps communities improve.</p></section>
+<div class="two-col">
+  <section class="form-card"><h2>Share your feedback</h2><p>This is a demo form; submitted messages are not stored permanently.</p>
+    <form method="post">
+      <label for="name">Your name</label><input id="name" name="name" required placeholder="Your name">
+      <label for="rating">How was your experience?</label><select id="rating" name="rating"><option value="5">Loved it — 5/5</option><option value="4">Really good — 4/5</option><option value="3">It's okay — 3/5</option><option value="2">Needs work — 2/5</option><option value="1">Not great — 1/5</option></select>
+      <label for="message">Your thoughts</label><textarea id="message" name="message" rows="5" required placeholder="I'd love to see..."></textarea>
+      <button class="button primary submit" type="submit">Submit feedback ↗</button>
+    </form>
+  </section>
+  <aside class="profile-panel"><div class="profile-avatar">♡</div><h2>Good feedback makes good work better.</h2><p>Have an idea for a new program, a more accessible event, or a smoother volunteer experience? We’re listening.</p><div class="empty-note">Be kind, be honest, and share only information you’re comfortable providing.</div></aside>
+</div>
+{% endblock %}
